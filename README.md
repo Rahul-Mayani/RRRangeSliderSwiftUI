@@ -22,18 +22,27 @@ To run the example project, clone the repo, and run pod install from the Example
 ![alt text](https://github.com/Rahul-Mayani/RRRangeSliderSwiftUI/blob/main/sample.mov)
 
 ```
+@State var minValue: Float = 0.0
+@State var maxValue: Float = Float(UIScreen.main.bounds.width - 50.0)
 
-// Add slider view
-RRRangeSlider(
-    minValue: self.$minValue, // mimimum value
-    maxValue: self.$maxValue, // maximum value
-    sliderWidth: CGFloat(maxValue), // set slider width
-    backgroundTrackColor: Color(UIColor.systemTeal).opacity(0.5), // track color
-    selectedTrackColor: Color.blue.opacity(25), // track color
-    globeColor: Color.orange, // globe background color
-    globeBackgroundColor: Color.black, // globe rounded border color
-    globeMinMaxValuesColor: Color.black // all text label color
-)
+var body: some View {
+    
+    VStack {
+        
+        Text("Range Slider")
+        /// slider view
+        RRRangeSlider(
+            minValue: self.$minValue, // mimimum value
+            maxValue: self.$maxValue, // maximum value
+            sliderWidth: CGFloat(maxValue), // set slider width
+            backgroundTrackColor: Color(UIColor.systemTeal).opacity(0.5), // track color
+            selectedTrackColor: Color.blue.opacity(25), // track color
+            globeColor: Color.orange, // globe background color
+            globeBackgroundColor: Color.black, // globe rounded border color
+            globeMinMaxValuesColor: Color.black // all text label color
+        )
+    }
+}
 
 
 ```
