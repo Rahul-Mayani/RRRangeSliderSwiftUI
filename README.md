@@ -1,6 +1,6 @@
 # RRRangeSliderSwiftUI
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/Rahul-Mayani/SwiftUIListingData/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/Rahul-Mayani/RRRangeSliderSwiftUI/blob/master/LICENSE)
 [![iOS](https://img.shields.io/badge/Platform-iOS-orange.svg?style=flat)](https://developer.apple.com/ios/)
 [![Swift 5+](https://img.shields.io/badge/Swift-5+-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![RangeSlider](https://img.shields.io/badge/Range-Slider-orange.svg?style=flat)](https://github.com/Rahul-Mayani/RRRangeSliderSwiftUI/)
