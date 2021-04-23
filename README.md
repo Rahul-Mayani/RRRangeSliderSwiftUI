@@ -5,14 +5,18 @@
 [![Swift 5+](https://img.shields.io/badge/Swift-5+-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![RangeSlider](https://img.shields.io/badge/Range-Slider-orange.svg?style=flat)](https://github.com/Rahul-Mayani/RRRangeSliderSwiftUI/)
 [![SwiftUI](https://img.shields.io/badge/SwiftUI-orange.svg?style=flat)](https://developer.apple.com/swiftui/)
+[![SPM](https://img.shields.io/badge/SPM-orange.svg?style=flat)](https://swift.org/package-manager/)
 
 Custom range slider in SwiftUI
 
 ## Installation
 
+#### SPM (Swift Package Manager)
+In Xcode, use the menu File > Swift Packages > Add Package Dependency... and enter the package URL `https://github.com/Rahul-Mayani/RRRangeSliderSwiftUI`.
+
 #### Manually
 1. Download the project.
-2. Add `RRRangeSlider.swift` file for slider view
+2. Add `RRRangeSliderSwiftUI.swift` file for slider view
 3. Add necessary files in your project.
 4. Congratulations!  
 

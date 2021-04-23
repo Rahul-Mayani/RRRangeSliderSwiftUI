@@ -1,15 +1,19 @@
 //
 //  ContentView.swift
-//  RRRangeSliderSwiftUI
+//  Example
 //
-//  Created by Rahul Mayani on 06/02/21.
+//  Created by Rahul Mayani on 17/04/21.
 //
 
 import SwiftUI
+import RRRangeSliderSwiftUI
+
+let sliderWidth = Float(UIScreen.main.bounds.width - 50.0)
 
 struct ContentView: View {
+    
     @State var minValue: Float = 0.0
-    @State var maxValue: Float = Float(UIScreen.main.bounds.width - 50.0)
+    @State var maxValue: Float = sliderWidth
     
     var body: some View {
         
@@ -17,15 +21,17 @@ struct ContentView: View {
             
             Text("Range Slider")
             
-            RRRangeSlider(
+            RRRangeSliderSwiftUI(
                 minValue: self.$minValue, // mimimum value
                 maxValue: self.$maxValue, // maximum value
-                sliderWidth: CGFloat(maxValue), // set slider width
+                minLabel: "0", // mimimum Label text
+                maxLabel: "100", // maximum Label text
+                sliderWidth: sliderWidth, // set slider width
                 backgroundTrackColor: Color(UIColor.systemTeal).opacity(0.5), // track color
                 selectedTrackColor: Color.blue.opacity(25), // track color
                 globeColor: Color.orange, // globe background color
                 globeBackgroundColor: Color.black, // globe rounded border color
-                globeMinMaxValuesColor: Color.black // all text label color
+                sliderMinMaxValuesColor: Color.black // all text label color
             )
         }
     }
@@ -36,3 +42,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

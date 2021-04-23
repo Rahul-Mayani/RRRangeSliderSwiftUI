@@ -1,51 +1,72 @@
-//
-//  RRRangeSlider.swift
-//  RRRangeSliderSwiftUI
-//
-//  Created by Rahul Mayani on 06/02/21.
-//
-
 import SwiftUI
 
-struct RRRangeSlider: View {
+public struct RRRangeSliderSwiftUI: View {
     /// ` Slider` Binding min & max values
     @Binding var minValue: Float
     @Binding var maxValue: Float
             
+    /// Set slider min & max Label values
+    let minLabel: String
+    let maxLabel: String
+    
     /// Set slider width
-    @State var sliderWidth: CGFloat = 0.0
+    let sliderWidth: Float
     
     /// `Slider` background track color
-    @State var backgroundTrackColor = Color(UIColor.systemTeal).opacity(0.3)
+    let backgroundTrackColor: Color
     /// `Slider` selected track color
-    @State var selectedTrackColor = Color.blue.opacity(25)
+    let selectedTrackColor: Color
     
     /// Globe background color
-    @State var globeColor = Color.orange
+    let globeColor: Color
     /// Globe rounded boarder color
-    @State var globeBackgroundColor = Color.black
+    let globeBackgroundColor: Color
     
-    /// Globe min & max static and dynamic labels value color
-    @State var globeMinMaxValuesColor = Color.black
+    /// Slider min & max static and dynamic labels value color
+    let sliderMinMaxValuesColor: Color
+    
+    /// `Slider` init
+    public init(minValue: Binding<Float>,
+               maxValue: Binding<Float>,
+               minLabel: String = "0",
+               maxLabel: String = "100",
+               sliderWidth: Float = 0,
+               backgroundTrackColor: Color = Color(UIColor.systemTeal).opacity(0.3),
+               selectedTrackColor: Color = Color.blue.opacity(25),
+               globeColor: Color = Color.orange,
+               globeBackgroundColor: Color = Color.black,
+               sliderMinMaxValuesColor: Color = Color.black) {
+        self._minValue = minValue
+        self._maxValue = maxValue
+        self.minLabel = minLabel
+        self.maxLabel = maxLabel
+        self.sliderWidth = sliderWidth
+        self.backgroundTrackColor = backgroundTrackColor
+        self.selectedTrackColor = selectedTrackColor
+        self.globeColor = globeColor
+        self.globeBackgroundColor = globeBackgroundColor
+        self.sliderMinMaxValuesColor = sliderMinMaxValuesColor
+    }
     
     /// `Slider` view setup
-    var body: some View {
+    public var body: some View {
+        
         VStack {
                 
             /// `Slider` start & end static values show in view
             HStack {
                 // start value
-                Text("0")
+                Text(minLabel)
                     .offset(x: 28, y: 20)
                     .frame(width: 30, height: 30, alignment: .leading)
-                    .foregroundColor(globeMinMaxValuesColor)
+                    .foregroundColor(sliderMinMaxValuesColor)
                 
                 Spacer()
                 // end value
-                Text("100")
+                Text(maxLabel)
                     .offset(x: -18, y: 20)
                     .frame(width: 30, height: 30, alignment: .trailing)
-                    .foregroundColor(globeMinMaxValuesColor)
+                    .foregroundColor(sliderMinMaxValuesColor)
             }
             
             /// `Slider` track view with glob view
@@ -80,7 +101,7 @@ struct RRRangeSlider: View {
                 Text(String(format: "%.0f", (CGFloat(self.minValue) / self.sliderWidth) * 100))
                     .offset(x: CGFloat(self.minValue))
                     .frame(width: 30, height: 30, alignment: .center)
-                    .foregroundColor(globeMinMaxValuesColor)
+                    .foregroundColor(sliderMinMaxValuesColor)
                       
                 // maximum value glob view
                 Circle()
@@ -100,9 +121,10 @@ struct RRRangeSlider: View {
                 Text(String(format: "%.0f", (CGFloat(self.maxValue) / self.sliderWidth) * 100))
                     .offset(x: CGFloat(self.maxValue - 18))
                     .frame(width: 30, height: 30, alignment: .center)
-                    .foregroundColor(globeMinMaxValuesColor)
+                    .foregroundColor(sliderMinMaxValuesColor)
             })
             .padding()
         }
     }
 }
+
